@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Beer Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="beer-generator beer-gradient neon-text mx-5 my-3">
+      <p class="rubric neon-text">Beer Generator App</p>
+      <h3 class="random-beer my-2 neon-text">Click for a random beer!</h3>
+      <div class="beer-button my-3">
+        <a>
+          <img class="fab" src="beer-icon.png" />
+        </a>
+      </div>
+      <p class="description neon-text"></p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const startBtn = document.querySelector(".beer-button");
+        const randomBeer = document.querySelector(".random-beer");
+        const descriptionDisplay = document.querySelector(".description");
+
+        function getData(e) {
+          e.preventDefault();
+          fetch("https://api.punkapi.com/v2/beers/random")
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              console.log(data);
+              const name = data[0].name;
+              const description = data[0].description;
+              const { volume } = data[0];
+              const volumeValue = volume.value;
+              const volumeUnit = volume.unit;
+
+              randomBeer.innerHTML = name + " " + volumeValue + volumeUnit;
+              descriptionDisplay.innerHTML = description;
+            });
+        }
+        startBtn.addEventListener("click", getData);
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  </body>
+</html>
