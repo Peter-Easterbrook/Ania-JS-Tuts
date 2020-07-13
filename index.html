@@ -33,11 +33,11 @@
               console.log(data);
               const name = data[0].name;
               const description = data[0].description;
-              const { volume } = data[0];
-              const volumeValue = volume.value;
-              const volumeUnit = volume.unit;
+              //const { volume } = data[0];
+              //const volumeValue = volume.value;
+              //const volumeUnit = volume.unit;
 
-              randomBeer.innerHTML = name + " " + volumeValue + volumeUnit;
+              randomBeer.innerHTML = name; // + " " + volumeValue + volumeUnit;
               descriptionDisplay.innerHTML = description;
             });
         }
