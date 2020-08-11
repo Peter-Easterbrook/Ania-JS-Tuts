@@ -16,7 +16,89 @@ body {
   padding: 0;
   line-height: 1.5;
 }
+  
 .beer-generator {
+   
+  width: 450px;
+  height: auto;
+  margin-top: 20vh;
+  margin-left: 37vw;
+  background-image: url(beer.gif);
+  background-size: cover;
+  
+  background-position: center center;
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.19), 0 5px 5px rgba(0, 0, 0, 0.23);
+}
+
+.rubric {
+  margin-top: 0;
+    padding: 10px 15px;
+    background: #2f373f;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    width: 450px;
+    overflow: hidden;
+    color: #f7f7f7;
+    
+}
+
+.random-beer {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px;
+}
+
+.description{
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+align-items: center;
+justify-content: center;
+text-align: justify;
+padding: 20px;: 
+}
+.beer-button {
+  display: inline-flex;
+}
+
+.beer-button a {
+  display: inline-block;
+  text-decoration: none;
+
+  background-color: #1f2429;
+  box-shadow: var(--box-shadow);
+  border-radius: 50%;
+  border: solid 1px #7dc1ec;
+  width: 5em;
+  height: 5em;
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.beer-button a:active {
+box-shadow: inset 0 0 10px #f7f7f7;
+   }
+  .beer-button a:hover {
+  cursor: url(glove2.png), auto;
+}
+
+.beer-button .fab {
+  height: 3.5em;
+  width: 3.5em;
+  }
+/*.beer-generator {
    height: 650px;
    width: 350px;
    margin-top: 10vh;
@@ -99,4 +181,4 @@ body {
      height: 3em;
    width: 3em;
    }
- 
+ */
