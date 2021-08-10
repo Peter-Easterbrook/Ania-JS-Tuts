@@ -3,48 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Beer Generator</title>
+    <title>Ania's JS Tutorials</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="noimageindex" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preload" href="Neoneon.otf" as="font" type="font/otf" />
+    <!-- Your custom script here -->
+
+    <script
+      src="https://kit.fontawesome.com/93b32f94da.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="beer-generator beer-gradient neon-text mx-5 my-3">
-      <p class="rubric neon-text">Beer Generator App</p>
-      <h3 class="random-beer my-2 neon-text">Click for a random beer!</h3>
-      <div class="beer-button my-3">
-        <a>
-          <img class="fab" src="beer-icon.png" />
-        </a>
+    <main>
+      <br />
+      <br />
+      <h2 class="section-header">
+        ANIA'S&nbsp;<i class="fab fa-js-square"></i>&nbsp;TUTORIALS
+      </h2>
+      <div class="grid-container">
+        <div class="beer-generator neon-text">
+          <p class="neon-text caption">Beer Generator App</p>
+          <h3 class="random-beer neon-text">Click for a random beer!</h3>
+          <div class="beer-button">
+            <a>
+              <img class="fab" src="beer-icon.png" />
+            </a>
+          </div>
+          <p class="description neon-text"></p>
+        </div>
+        <script src="beer.js"></script>
+
+        <div class="minesweeper">
+          <div class="grid"></div>
+          <div class="flags neon-text">
+            Flags left: <span id="flags-left"></span>
+          </div>
+          <div id="result"></div>
+          <div onclick="window.location.reload();" class="button neon-text">
+            Reset!
+          </div>
+        </div>
       </div>
-      <p class="description neon-text"></p>
-    </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const startBtn = document.querySelector(".beer-button");
-        const randomBeer = document.querySelector(".random-beer");
-        const descriptionDisplay = document.querySelector(".description");
 
-        function getData(e) {
-          e.preventDefault();
-          fetch("https://api.punkapi.com/v2/beers/random")
-            .then((response) => {
-              return response.json();
-            })
-            .then((data) => {
-              console.log(data);
-              const name = data[0].name;
-              const description = data[0].description;
-              //const { volume } = data[0];
-              //const volumeValue = volume.value;
-              //const volumeUnit = volume.unit;
+      <script src="minesweeper.js"></script>
+    </main>
 
-              randomBeer.innerHTML = name; // + " " + volumeValue + volumeUnit;
-              descriptionDisplay.innerHTML = description;
-            });
-        }
-        startBtn.addEventListener("click", getData);
-      });
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
   </body>
 </html>
